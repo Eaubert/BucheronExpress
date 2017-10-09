@@ -1,9 +1,10 @@
 {
-  "name": "small-dawn",
+  "name": "yellow-block",
   "version": "1.0.0",
   "description": "My app description",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "mocha"
   },
   "dependencies": {
     "async": "^1.5.2",
@@ -25,7 +26,13 @@
     "passport": "^0.3.2",
     "passport-local": "^1.0.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5",
+    "sinon": "^1.17.3",
+    "sinon-chai": "^2.8.0",
+    "supertest": "^1.2.0"
+  },
   "engines": {
     "node": "6.1.0"
   }
