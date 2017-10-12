@@ -11,11 +11,12 @@ exports.up = function(knex, Promise) {
       table.string('gender');
       table.string('desc');
       table.string('location');
+      table.string('img');
       table.timestamps();
     }).then(function () {
                 return knex("product").insert([
-                    {name: "geox", desc: "oui ca respire"},
-                    {name: "nike", desc: "coupe avec classe"},
+                    {name: "geox", desc: "oui ca respire", img: "shoes1.PNG"},
+                    {name: "nike", desc: "coupe avec classe", img: "shoes2.PNG"},
                     {name: "bushoesron", desc: "CCC"},
                     {name: "woodshoes", desc: "DDDD"}
                 ]);
