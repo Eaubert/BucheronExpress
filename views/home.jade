@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  .container-fluid
+  .container-fluidZZ
     if messages.error
       .alert.alert-danger(role='alert')
         for error in messages.error
@@ -16,5 +16,5 @@ block content
           div= info.msg
     .row
     ul
-    - each result in test
-        li= result.attributes.name
+      - each result in test
+        img(src='img/'+result.attributes.img)
