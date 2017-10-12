@@ -140,18 +140,19 @@ exports.accountPut = function(req, res, next) {
   }
 
   var user = new User({ id: req.user.id });
+  var user_changes = {};
   if ('password' in req.body) {
-    user.save({ password: req.body.password }, { patch: true });
+    user_changes={ password: req.body.password };
   } else {
-    user.save({
+    user_changes={
       email: req.body.email,
       name: req.body.name,
       gender: req.body.gender,
       location: req.body.location,
       website: req.body.website
-    }, { patch: true });
+    };
   }
-  user.then(function(user) {
+  user.save(user_changes,{patch:true}).then(function(user) {
     if ('password' in req.body) {
       req.flash('success', { msg: 'Your password has been changed.' });
     } else {
