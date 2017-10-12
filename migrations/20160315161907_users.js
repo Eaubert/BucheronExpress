@@ -17,6 +17,7 @@ exports.up = function(knex, Promise) {
       table.string('vk');
       table.timestamps();
     })
+	
   ]);
 };
 
