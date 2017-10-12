@@ -4,12 +4,10 @@ var User = require('../models/User');
  * GET /
  */
 exports.index = function(req, res) {
- 	User.fetchAll(/*{columns: ['id','name']}*/).then(function(tab) {
-		console.log(tab);
-		res.render('test', {
+ 	User.fetchAll().then(function(tab) {
+		res.render('home', {
     	title: 'Home',
-			//test : tab
-			test: Array.from(tab)
+			test : tab.models
 		});
 	});
 };
