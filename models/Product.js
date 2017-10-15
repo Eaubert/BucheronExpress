@@ -6,9 +6,7 @@ var Product = bookshelf.Model.extend({
   tableName: 'product',
   hasTimestamps: true,
 
-  initialize: function() {
-    this.on('saving', this);
-  }
+
 
 
 });
