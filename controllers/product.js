@@ -9,10 +9,6 @@ var Product = require('../models/Product');
  */
 exports.index = function(req, res) {
 	
-	new Product({
-    name: req.body.name,
-    email: req.body.email,
-  })
   
    console.log(Product);
   res.render('product', {
