@@ -281,3 +281,12 @@ textarea {
   letter-spacing: 0.2em;
   text-transform: uppercase;
 }
+
+.devant{
+  display:inline-block;
+  width:30%;
+  height: auto;
+  margin-left: 1.66%;
+  margin-right: 1.66%;
+  margin-bottom: 50px;
+}
