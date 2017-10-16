@@ -23,8 +23,8 @@ exports.up = function(knex, Promise) {
                     {brand: "geox", name: "Adidas", desc: "coupe du bois avec classe", size : 44, color : "red", price : 78, gender : "male", location : "Alaska", img : "shoe5.PNG"}, 
                     {brand: "adidas", name: "nike", desc: "coupe du bois avec classe", size : 46.5, color : "red", price : 25, gender : "male", location : "France", img : "shoe6.PNG"}, 
                     {brand: "adidas", name: "Respect-adi", desc: "Put some respect on the tree", size : 42, color : "blue", price : 40, gender : "male", location : "England", img : "shoe7.PNG"}, 
-                    {brand: "Woody", name: "WoodPecker", desc: "Cut cut cut cuuuuuuuuut", size : 46, color : "yellow", price : 102, gender : "woman", location : "China", img : "shoe8.PNG"} 
-                    {brand: "DC", name: "Flash", desc: "Cut as fast as the light", size : 46, color : "yellow", price : 235, gender : "woman", location : "New york", img : "shoe9.PNG"} 
+                    {brand: "Woody", name: "WoodPecker", desc: "Cut cut cut cuuuuuuuuut", size : 46, color : "yellow", price : 102, gender : "woman", location : "China", img : "shoe8.PNG"},
+                    {brand: "DC", name: "Flash", desc: "Cut as fast as the light", size : 46, color : "yellow", price : 235, gender : "woman", location : "New york", img : "shoe9.PNG"},
                     {brand: "MARVEL", name: "Spiderman", desc: " With great shoes, comes great responsibility", size : 42, color : "red", price : 99, gender : "men", location : "NewYork", img : "shoe10.PNG"} 
                 ]);
 				
