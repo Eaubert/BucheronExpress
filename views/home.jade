@@ -19,3 +19,10 @@ block content
     ul
       - each result in test
         img(src='img/'+result.attributes.img)
+        ul
+          li='name : ' +result.attributes.name
+          li='brand : '+result.attributes.brand
+          li='size : '+result.attributes.size
+          li='price : '+result.attributes.price
+          li='gender : '+result.attributes.gender
+          li='description : '+result.attributes.desc

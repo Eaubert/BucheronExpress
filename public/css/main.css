@@ -281,3 +281,17 @@ textarea {
   letter-spacing: 0.2em;
   text-transform: uppercase;
 }
+
+div{
+  display: block;
+  margin-left:2%;
+  width:96%;
+  margin-bottom:2%;
+}
+
+ul{
+  display: inline-block;
+  font-size: 200%;
+  vertical-align: middle;
+
+}
