@@ -45,6 +45,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //filter method
 app.get('/filterName', ProductController.filterName);
+app.get('/filterPrice', ProductController.filterPrice);
 
 
 

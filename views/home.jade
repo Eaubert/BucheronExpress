@@ -14,10 +14,13 @@ block content
       .alert.alert-info(role='alert')
         for info in messages.info
           div= info.msg
+
+    a(href="/filterPrice") By Price |
+    a(href="/filterName") By Name
+
     .row
-    a(href='/filtername') filtre
-    ul
-      - each result in test
+    - each result in test
+      div
         img(src='img/'+result.attributes.img)
         ul
           li='name : ' +result.attributes.name
