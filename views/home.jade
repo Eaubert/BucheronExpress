@@ -15,6 +15,7 @@ block content
         for info in messages.info
           div= info.msg
     .row
+    a(href='/filtername') filtre
     ul
       - each result in test
         img(src='img/'+result.attributes.img)
