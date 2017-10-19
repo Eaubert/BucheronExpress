@@ -1,0 +1,31 @@
+extends layout
+
+block content
+  .container-fluidZZ
+    if messages.error
+      .alert.alert-danger(role='alert')
+        for error in messages.error
+          div= error.msg
+    if messages.success
+      .alert.alert-success(role='alert')
+        for success in messages.success
+          div= success.msg
+    if messages.info
+      .alert.alert-info(role='alert')
+        for info in messages.info
+          div= info.msg
+    .row
+      - each result in tabpanier
+        div
+          img(src='img/'+result.attributes.img)
+          ul.liste
+            li='name : ' +result.attributes.name
+            li='brand : '+result.attributes.brand
+            li='size : '+result.attributes.size
+            li='price : '+result.attributes.price
+            li='gender : '+result.attributes.gender
+            li='description : '+result.attributes.desc
+            li='quantity : ' + result.attributes.quantity
+            a.float(href='/s'+result.attributes.id)<button class="btn btn-primary">supprimer</button>
+    .row
+      p.total montant total: #{total}

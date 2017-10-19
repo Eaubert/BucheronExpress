@@ -9,7 +9,7 @@ var bodyParser = require('body-parser');
 var expressValidator = require('express-validator');
 var dotenv = require('dotenv');
 var passport = require('passport');
-
+var Product = require('./models/Product');
 // Load environment variables from .env file
 dotenv.load();
 
@@ -18,6 +18,9 @@ var HomeController = require('./controllers/home');
 var userController = require('./controllers/user');
 var ProductController = require('./controllers/product');
 var contactController = require('./controllers/contact');
+
+//nb article
+var nb_art=10
 
 // Passport OAuth strategies
 require('./config/passport');
@@ -58,6 +61,11 @@ app.get('/categorize/gender/:gender', ProductController.categorize);
 
 
 app.get('/', HomeController.index);
+for(var x=1;x<=nb_art;x++){
+app.get('/'+x, HomeController.art);
+app.get('/s'+x,HomeController.supp)
+}
+app.get('/panier', HomeController.panier);
 app.get('/contact', contactController.contactGet);
 app.post('/contact', contactController.contactPost);
 app.get('/account', userController.ensureAuthenticated, userController.accountGet);
