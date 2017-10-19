@@ -15,8 +15,31 @@ block content
         for info in messages.info
           div= info.msg
 
-    a(href="/filterPrice") By Price |
-    a(href="/filterName") By Name
+    div
+      text filter :
+      a(href="/filterPrice") By Price |
+      a(href="/filterName") By Name
+
+    ul
+        li Brand
+         a(href="/categorize/brand/Nike") Nike
+         a(href="/categorize/brand/Geox") geox
+        li Price
+         a(href="/categorize/price/0") <50$
+         a(href="/categorize/price/50") 50$<100$
+         a(href="/categorize/price/100") 100$<$150
+         a(href="/categorize/price/150") 150$<$200
+         a(href="/categorize/price/200") 200$<$250
+
+        li size
+          a(href="/categorize/size/42") 42
+          a(href="/categorize/size/43") 43
+          a(href="/categorize/size/40") 40
+
+        li gender
+          a(href="/categorize/gender/woman") woman
+          a(href="/categorize/gender/male") man
+
 
     .row
     - each result in test

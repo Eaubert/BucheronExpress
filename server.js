@@ -47,6 +47,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/filterName', ProductController.filterName);
 app.get('/filterPrice', ProductController.filterPrice);
 
+//categorize methodOverride
+app.get('/categorize/brand/:brand', ProductController.categorize);
+app.get('/categorize/size/:size', ProductController.categorize);
+app.get('/categorize/price/:price', ProductController.categorize);
+app.get('/categorize/gender/:gender', ProductController.categorize);
+
+
 
 
 
