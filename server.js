@@ -16,6 +16,7 @@ dotenv.load();
 // Controllers
 var HomeController = require('./controllers/home');
 var userController = require('./controllers/user');
+var ProductController = require('./controllers/product');
 var contactController = require('./controllers/contact');
 var paimentController = require('./controllers/paiement')
 
@@ -45,6 +46,16 @@ app.use(function(req, res, next) {
   next();
 });
 app.use(express.static(path.join(__dirname, 'public')));
+
+//categorize method
+app.get('/categorize', ProductController.categorize);
+
+//method search
+app.post('/search', ProductController.search);
+
+
+
+
 
 app.get('/', HomeController.index);
 for(var x=1;x<=nb_art;x++){
