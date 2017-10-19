@@ -13,6 +13,9 @@ nav.navbar.navbar-default.navbar-static-top
           a(href='/') Home
         li(class=(title == 'Contact') ? 'active' : null)
           a(href='/contact') Contact
+        li
+          a.lien(href='/panier')
+            img.shop(src='img/shop.png')
       ul.nav.navbar-nav.navbar-right
         if user
           li.dropdown

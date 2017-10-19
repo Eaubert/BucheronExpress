@@ -290,8 +290,35 @@ div{
 }
 
 ul{
-  display: inline-block;
-  font-size: 200%;
-  vertical-align: middle;
+font-size: 200%;
+}
 
+.liste{
+  vertical-align: middle;
+  width:60%;
+  display: inline-block;
+}
+
+img{
+  width: 30%;
+  height: auto;
+  border: 3px solid black;
+}
+
+.shop{
+  width:100%;
+  border:none;
+  padding:none;
+  margin:none;
+}
+
+
+.lien{
+  width: 10%;
+  padding:none;
+  margin:none;
+}
+
+.total{
+  font-size: 200%;
 }
