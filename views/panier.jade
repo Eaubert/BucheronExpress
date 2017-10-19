@@ -15,7 +15,7 @@ block content
         for info in messages.info
           div= info.msg
     .row
-      - each result in tabuser
+      - each result in tabpanier
         div
           img(src='img/'+result.attributes.img)
           ul.liste
@@ -25,4 +25,7 @@ block content
             li='price : '+result.attributes.price
             li='gender : '+result.attributes.gender
             li='description : '+result.attributes.desc
-            a(href='/'+ result.attributes.id)<button class="btn btn-primary">Ajouter au panier</button>
+            li='quantity : ' + result.attributes.quantity
+            a.float(href='/s'+result.attributes.id)<button class="btn btn-primary">supprimer</button>
+    .row
+      p.total montant total: #{total}
