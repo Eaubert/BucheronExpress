@@ -283,7 +283,7 @@ textarea {
   text-transform: uppercase;
 }
 
-div{
+.list{
   display: block;
   margin-left:2%;
   width:96%;
@@ -322,4 +322,74 @@ img{
 
 .total{
   font-size: 200%;
+}
+
+/*-------------------menu---------------------------*/
+
+a {color: black;margin: 5px; text-decoration: none;}
+
+.dropdown-menu li:hover .sub-menu {
+    visibility: visible;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+}
+
+.dropdown-menu .sub-menu {
+    left: 100%;
+    position: absolute;
+    top: 0;
+    visibility: hidden;
+    margin-top: -1px;
+  }
+
+  .menu{
+    margin-bottom: 20px;
+  }
+
+  .menu > li {
+    margin-left : 10px;
+    text-align:  : center;
+  }
+
+  .formCatg{
+    display : float;
+    float : left;
+    margin : 20px;
+  }
+
+  .formSearch{
+    display : float;
+    float : right;
+    margin : 20px;
+  }
+
+  .clearfix:before,
+  .clearfix:after {
+    content: "";
+    display: table;
+  }
+
+  .clearfix:after {
+    clear: both;
+  }
+
+  .clearfix {
+    zoom: 1; /* ie 6/7 */
+  }
+
+/*--------------------------------------Header---------------------------------*/
+
+.navbar-static-top{
+  margin-bottom: 0;
+}
+
+.collapse{
+  margin-bottom: 0;
+}
+
+.row{
+  margin-right : 0;
 }

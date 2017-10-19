@@ -46,15 +46,11 @@ app.use(function(req, res, next) {
 });
 app.use(express.static(path.join(__dirname, 'public')));
 
-//filter method
-app.get('/filterName', ProductController.filterName);
-app.get('/filterPrice', ProductController.filterPrice);
+//categorize method
+app.get('/categorize', ProductController.categorize);
 
-//categorize methodOverride
-app.get('/categorize/brand/:brand', ProductController.categorize);
-app.get('/categorize/size/:size', ProductController.categorize);
-app.get('/categorize/price/:price', ProductController.categorize);
-app.get('/categorize/gender/:gender', ProductController.categorize);
+//method search
+app.post('/search', ProductController.search);
 
 
 

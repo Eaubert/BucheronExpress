@@ -8,16 +8,16 @@ exports.filterName =  function(req, res) {
  	Product.forge().orderBy('name','asc').fetchAll().then(function(tab) {
 		res.render('home', {
     	title: 'Home',
-			test : tab.models
+			tabuser : tab.models
 		});
 	});
 };
 
 exports.filterPrice =  function(req, res) {
- Product.forge().orderBy('price','DESC').fetchAll().then(function(tab) {
+ Product.forge().fetchAll().then(function(tab) {
    res.render('home', {
      title: 'Home',
-     test : tab.models
+     tabuser : tab.models
    });
  });
 };
@@ -41,10 +41,29 @@ exports.categorize =  function(req, res) {
        qb.where('product.gender', '=', req.param("gender"));
   }
 
+  if(req.param("order")){
+     qb.orderBy(req.param("order"),'asc')
+  }
+
  }).fetchAll().then(function(tab) {
    res.render('home', {
      title: 'Home',
-     test : tab.models
+     tabuser : tab.models
+   });
+ });
+};
+
+exports.search =  function(req, res) {
+
+ Product.forge().query(function (qb) {
+
+    var search =  "%"+ req.body.search.toUpperCase() + "%";
+     qb.where('product.name', 'LIKE', search).orWhere('product.brand', 'LIKE', search);
+
+ }).fetchAll().then(function(tab) {
+   res.render('home', {
+     title: 'Home',
+     tabuser : tab.models
    });
  });
 };
