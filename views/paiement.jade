@@ -1,0 +1,69 @@
+extends layout
+
+block content
+  .container-fluidZZ
+    if messages.error
+      .alert.alert-danger(role='alert')
+        for error in messages.error
+          div= error.msg
+    if messages.success
+      .alert.alert-success(role='alert')
+        for success in messages.success
+          div= success.msg
+    if messages.info
+      .alert.alert-info(role='alert')
+        for info in messages.info
+          div= info.msg
+
+    div
+      label(for='nom') Nom :
+      input#nom(type='text')
+    div
+      label(for='prenom') Prenom :
+      input#prenom(type='text')
+    div
+      label(for='Pays') Pays :
+      input#pays(type='text')
+    div
+      label(for='Adresse') Adresse :
+      input#Adresse(type='text')
+    div
+      label(for='Ville') Ville :
+      input#Ville(type='text')
+    div
+      label(for='Code postal') Code postal :
+      input(type='text', id='Code postal')
+    div
+      label(for='Téléphone') Téléphone :
+      input(type='text', id='Téléphone')
+    div
+      label(for='E-mail') E-mail :
+      input#E-mail(type='text')
+    div
+      select(name='Type', size='1')
+        option
+          | Carte bancaire
+        option
+          | Visa
+        option
+          | Visa Electron
+        option
+          | EuroCard/MasterCard
+        option
+          | American Express
+        option
+          | Carte Aurore
+        option
+          | Carte prépayée
+
+    div
+      label(for='Titulaire') Titulaire :
+      input#Titulaire(type='text')
+    div
+      label(for='Numéro de carte') Numéro de carte :
+      input(type='text', id='Numéro de carte')
+    div
+      label(for="Date d'expiration") Date d'expiration :
+      input(type='text', id="Date d'expiration")
+    div
+      input(type='submit', value='Valider')

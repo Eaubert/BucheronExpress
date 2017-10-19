@@ -17,6 +17,7 @@ dotenv.load();
 var HomeController = require('./controllers/home');
 var userController = require('./controllers/user');
 var contactController = require('./controllers/contact');
+var paimentController = require('./controllers/paiement')
 
 //nb article
 var nb_art=10
@@ -66,6 +67,7 @@ app.get('/reset/:token', userController.resetGet);
 app.post('/reset/:token', userController.resetPost);
 app.get('/logout', userController.logout);
 app.get('/unlink/:provider', userController.ensureAuthenticated, userController.unlink);
+app.get('/paiement', paimentController.paiement);
 
 // Production error handler
 if (app.get('env') === 'production') {
