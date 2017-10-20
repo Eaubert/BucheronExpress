@@ -99,7 +99,9 @@ block content
             li='name : ' +result.attributes.name
             li='brand : '+result.attributes.brand
             li='size : '+result.attributes.size
-            li='price : '+result.attributes.price
+            li='price : '+result.attributes.price+'€'
             li='gender : '+result.attributes.gender
             li='description : '+result.attributes.desc
-            a(href='/'+ result.attributes.id)<button class="btn btn-primary">Ajouter au panier</button>
+            form(method='POST', action='/art')
+              input(type='hidden', name='id', value=result.attributes.id)
+              input.btn.btn-primary(type='submit', value='Ajouter au panier')

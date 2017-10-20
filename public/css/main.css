@@ -286,18 +286,36 @@ textarea {
 .list{
   display: block;
   margin-left:2%;
-  width:96%;
+  width:98%;
   margin-bottom:2%;
+  background-color: #EFEFEF;
 }
 
-ul{
+.listpan{
+  display: block;
+  margin-left:2%;
+  width:98%;
+  margin-bottom:1%;
+  margin-top: 1%;
+  background-color: #EFEFEF;
+}
+
+ul.liste{
 font-size: 200%;
+}
+
+.m{
+font-size: 150%;
 }
 
 .liste{
   vertical-align: middle;
   width:60%;
   display: inline-block;
+}
+
+.liste > li {
+  list-style-type: none;
 }
 
 img{
@@ -357,8 +375,13 @@ img{
 
   .form-style-9 ul li input[type="button"]:hover,.form-style-9 ul li input[type="submit"]:hover {    background: linear-gradient(to bottom, #2D77A2 5%, #337DA8 100%);    background-color: #28739E;}
 
-input{
+.form-style-9 input{
   margin-left: 1%;
+  margin-bottom: 2%;
+}
+
+.form-style-9 select{
+  margin-bottom: 2%;
 }
 
 /*-------------------menu---------------------------*/
@@ -419,9 +442,7 @@ a {color: black;margin: 5px; text-decoration: none;}
 
 /*--------------------------------------Header---------------------------------*/
 
-.navbar-static-top{
-  margin-bottom: 0;
-}
+
 
 .collapse{
   margin-bottom: 0;
@@ -429,4 +450,16 @@ a {color: black;margin: 5px; text-decoration: none;}
 
 .row{
   margin-right : 0;
+  margin-left: 0;
+}
+
+.div{
+  margin-left: none;
+  margin-right: none;
+}
+
+.succes{
+  text-align: center;
+  font-size: 600%;
+  margin-top: 10%;
 }

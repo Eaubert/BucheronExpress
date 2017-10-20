@@ -54,14 +54,9 @@ app.get('/categorize', ProductController.categorize);
 app.post('/search', ProductController.search);
 
 
-
-
-
 app.get('/', HomeController.index);
-for(var x=1;x<=nb_art;x++){
-app.get('/'+x, HomeController.art);
-app.get('/s'+x,HomeController.supp)
-}
+app.post('/s',HomeController.supp);
+app.post('/art', HomeController.art);
 app.get('/panier', HomeController.panier);
 app.get('/contact', contactController.contactGet);
 app.post('/contact', contactController.contactPost);
