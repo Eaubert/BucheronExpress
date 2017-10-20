@@ -16,7 +16,7 @@ block content
           div= info.msg
     .row
       - each result in tabpanier
-        div
+        div.listpan
           img(src='img/'+result.attributes.img)
           ul.liste
             li='name : ' +result.attributes.name
@@ -26,7 +26,8 @@ block content
             li='gender : '+result.attributes.gender
             li='description : '+result.attributes.desc
             li='quantity : ' + result.attributes.quantity
-            a.float(href='/s'+result.attributes.id)<button class="btn btn-primary">supprimer</button>
+            form(method='POST', action='/s')
+              input(type='hidden', name='id', value=result.attributes.id)
+              input.btn.btn-primary(type='submit', value='Supprimer')
     .row
       p.total montant total: #{total}
-      a(href='/paiement')<button class="btn btn-primary">Payer</button>

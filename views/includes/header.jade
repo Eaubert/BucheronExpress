@@ -8,7 +8,7 @@ nav.navbar.navbar-default.navbar-static-top
         span.icon-bar
       a.navbar-brand(href='/') Bucheron Express
     #navbar.navbar-collapse.collapse
-      ul.nav.navbar-nav
+      ul.m.nav.navbar-nav
         li(class=(title == 'Home') ? 'active' : null)
           a(href='/') Home
         li(class=(title == 'Contact') ? 'active' : null)
@@ -16,7 +16,7 @@ nav.navbar.navbar-default.navbar-static-top
         li
           a.lien(href='/panier')
             img.shop(src='img/shop.png')
-      ul.nav.navbar-nav.navbar-right
+      ul.m.nav.navbar-nav.navbar-right
         if user
           li.dropdown
             a.navbar-avatar.dropdown-toggle(href='#', data-toggle='dropdown')
