@@ -47,13 +47,18 @@ exports.art = function(req, res) {
 exports.panier =function(req, res){
   Panier.fetchAll().then(function(pan) {
     var total=0
+    var btn='/'
     for(var x=0;x<pan.length;x++){
       total+=(pan.models[x].attributes.price*pan.models[x].attributes.quantity)
+    }
+    if(total>0){
+      btn="/paiement"
     }
   res.render('panier', {
     title: 'basket',
     tabpanier : pan.models,
-    total : total
+    total : total,
+    btn : btn
   });
   });
 }
@@ -64,13 +69,18 @@ exports.supp =function(req, res){
 
   Panier.fetchAll().then(function(pan) {
     var total=0
+    var btn='/'
     for(var x=0;x<pan.length;x++){
       total+=(pan.models[x].attributes.price*pan.models[x].attributes.quantity)
+    }
+    if(total>0){
+      btn="/paiement"
     }
   res.render('panier', {
     title: 'basket',
     tabpanier : pan.models,
-    total : total
+    total : total,
+    btn : btn
   });
   });
 }
