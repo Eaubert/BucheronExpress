@@ -51,7 +51,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/categorize', ProductController.categorize);
 
 //method search
-app.post('/search', ProductController.search);
+app.post('/find', ProductController.search);
 
 
 app.get('/', HomeController.index);
