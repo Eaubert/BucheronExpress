@@ -57,7 +57,7 @@ exports.search =  function(req, res) {
 
  Product.forge().query(function (qb) {
 
-    var search =  "%"+ req.body.search.toUpperCase() + "%";
+    var search =  "%"+ req.body.search + "%";
      qb.where('product.name', 'LIKE', search).orWhere('product.brand', 'LIKE', search);
 
  }).fetchAll().then(function(tab) {

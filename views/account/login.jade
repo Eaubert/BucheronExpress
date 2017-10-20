@@ -9,7 +9,7 @@ block content
             for error in messages.error
               div= error.msg
 
-        form(action='/search', method='POST')
+        form(method='POST')
           legend Log In
           .form-group
             label.control-label(for='email') Email
