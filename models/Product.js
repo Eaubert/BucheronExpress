@@ -4,7 +4,7 @@ var bookshelf = require('../config/bookshelf');
 
 var Product = bookshelf.Model.extend({
   tableName: 'product',
-  hasTimestamps: true,
+  hasTimestamps: true
 
 
 

@@ -14,9 +14,86 @@ block content
       .alert.alert-info(role='alert')
         for info in messages.info
           div= info.msg
+
+    div.menu.clearfix
+
+      form(action='/categorize').formCatg
+        li.dropdown.btn.btn-default
+          span
+              |  Brand
+              span.caret
+          ul.dropdown-menu(role='menu', aria-labelledby='dropdownMenu')
+            li
+              <input type="checkbox" name="brand" value="Nike" /> Nike
+            li
+              <input type="checkbox" name="brand" value="Geox" /> Geox
+
+        li.dropdown.btn.btn-default
+            span
+              |  Price
+              span.caret
+            ul.dropdown-menu(role='menu', aria-labelledby='dropdownMenu')
+              li
+                <input type="checkbox" name="price" value="0" /> >50
+              li
+                <input type="checkbox" name="price" value="50" /> 50<>100
+              li
+                <input type="checkbox" name="price" value="100" /> 100<>150
+              li
+                <input type="checkbox" name="price" value="150" /> 150<>200
+              li
+                <input type="checkbox" name="price" value="200" /> 200<>250
+
+         li.dropdown.btn.btn-default
+               span
+                 |  Size
+                 span.caret
+               ul.dropdown-menu(role='menu', aria-labelledby='dropdownMenu')
+                li
+                  <input type="checkbox" name="size" value="40" /> 40
+                li
+                  <input type="checkbox" name="size" value="41" /> 41
+                li
+                  <input type="checkbox" name="size" value="42" /> 42
+                li
+                  <input type="checkbox" name="size" value="43" /> 43
+                li
+                  <input type="checkbox" name="size" value="44" /> 44
+
+          li.dropdown.btn.btn-default
+                span
+                  |  Gender
+                  span.caret
+                ul.dropdown-menu(role='menu', aria-labelledby='dropdownMenu')
+                  li
+                    <input type="checkbox" name="gender" value="Woman" /> Woman
+                  li
+                    <input type="checkbox" name="gender" value="Male" /> Male
+
+            li.dropdown.btn.btn-default
+                  span
+                    |  Order By
+                    span.caret
+                  ul.dropdown-menu(role='menu', aria-labelledby='dropdownMenu')
+                    li
+                      <input type="checkbox" name="order" value="Size" /> Size
+                    li
+                      <input type="checkbox" name="order" value="Price" /> Price
+                    li
+                      <input type="checkbox" name="order" value="Name" /> Name
+          button.btn.btn-primary(type='submit') Accept
+
+
+      form(action='/search', method='POST').formSearch
+        input(type='text', name='search', id='search', placeholder='Search...', autofocus=true)
+        button.btn.btn-primary(type='submit') Search
+
+    br.clear
+
+
     .row
       - each result in tabuser
-        div
+        div.list
           img(src='img/'+result.attributes.img)
           ul.liste
             li='name : ' +result.attributes.name
