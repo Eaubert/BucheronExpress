@@ -310,7 +310,7 @@ font-size: 150%;
 
 .liste{
   vertical-align: middle;
-  width:60%;
+  width:65%;
   display: inline-block;
 }
 
@@ -463,3 +463,16 @@ a {color: black;margin: 5px; text-decoration: none;}
   font-size: 600%;
   margin-top: 10%;
 }
+
+/*-----------------------------------Map-------------------*/
+
+.map{
+     height: 150px;
+     width: 300px;
+     border : 2px solid black
+ }
+
+ .location{
+   float : right;
+   width: 300px;
+ }
