@@ -7,7 +7,8 @@ html
     title= title
     link(rel='stylesheet', href='/css/vendor/bootstrap.css')
     link(rel='stylesheet', href='/css/main.css')
-  body
+
+  body(onload="initialize()")
     include includes/header
     block content
     include includes/footer
@@ -15,6 +16,7 @@ html
     script(src='/js/lib/jquery.js')
     script(src='/js/lib/bootstrap.js')
     script(src='/js/main.js')
+    script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPE0OlN4-ZaGTtGrY8dwFQU7MS-ChhWEg")
 
     // Google Analytics: change UA-XXXXX-X to be your site's ID.
     script.

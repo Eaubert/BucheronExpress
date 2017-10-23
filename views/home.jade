@@ -92,10 +92,17 @@ block content
 
 
     .row
+
+      - var i = 0
       - each result in tabuser
         div.list
           img(src='img/'+result.attributes.img)
           ul.liste
+
+            div.location
+              div='These shoes are most worn in : ' +result.attributes.location
+              div(id="map_canvas"+i data-lat=result.attributes.longitude data-long=result.attributes.latitude class="test"+i).map
+
             li='name : ' +result.attributes.name
             li='brand : '+result.attributes.brand
             li='size : '+result.attributes.size
@@ -105,3 +112,5 @@ block content
             form(method='POST', action='/art')
               input(type='hidden', name='id', value=result.attributes.id)
               input.btn.btn-primary(type='submit', value='Ajouter au panier')
+
+        - i += 1
