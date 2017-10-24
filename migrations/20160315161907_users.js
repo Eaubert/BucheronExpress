@@ -16,10 +16,14 @@ exports.up = function(knex, Promise) {
       table.string('google');
       table.string('vk');
       table.timestamps();
-    })
-	
-  ]);
-};
+    }).then(function () {
+                return knex("users").insert([
+                    {name : "Admin" ,email :"SuperAdmin@gmail.com", password :"$2a$10$ykmW.BcAUGBaKIHyaxQEpuhmSZ1u7x.3RL5QktSeLWrxc80Zpj3ze"}
+                  ]);
+  	}),
+
+    ]);
+  };
 
 exports.down = function(knex, Promise) {
   return Promise.all([
