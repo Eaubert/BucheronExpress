@@ -7,17 +7,18 @@ exports.paiement = function(req, res) {
  		});
  };
 
- exports.fin = function(req, res) {
+ exports.test=function(req, res){
    if (req.user){
-     return res.redirect('/success');
+     return res.redirect('/paiement');
    }
    else{
      return res.redirect('/login');
      res.render('account/login',{
        title: 'Log in'
    });
-  };
-};
+  }
+ }
+
 
   exports.success = function(req, res) {
     Panier.fetchAll().then(function(pan) {

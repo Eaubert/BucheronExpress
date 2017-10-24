@@ -30,14 +30,12 @@ nav.navbar.navbar-default.navbar-static-top
                 img(src=user.gravatar)
               | <span> #{user.name || user.email || user.id} </span>
               i.caret
-              li
             ul.dropdown-menu
               li
                 a(href='/account') My Account
               li.divider
               li
                 a(href='/logout') Logout
-
         else
           li(class=(title == 'Log in') ? 'active' : null)
             a(href='/login') Log in

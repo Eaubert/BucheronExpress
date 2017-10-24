@@ -73,9 +73,9 @@ app.get('/reset/:token', userController.resetGet);
 app.post('/reset/:token', userController.resetPost);
 app.get('/logout', userController.logout);
 app.get('/unlink/:provider', userController.ensureAuthenticated, userController.unlink);
+app.get('/log', paimentController.test);
 app.get('/paiement', paimentController.paiement);
-app.post('/finalisation',paimentController.fin);
-app.get('/success',paimentController.success);
+app.post('/finalisation',paimentController.success);
 
 // Production error handler
 if (app.get('env') === 'production') {
