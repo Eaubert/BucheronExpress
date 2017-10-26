@@ -1,0 +1,57 @@
+extends layout
+
+block content
+  .container-fluidZZ
+    if messages.error
+      .alert.alert-danger(role='alert')
+        for error in messages.error
+          div= error.msg
+    if messages.success
+      .alert.alert-success(role='alert')
+        for success in messages.success
+          div= success.msg
+    if messages.info
+      .alert.alert-info(role='alert')
+        for info in messages.info
+          div= info.msg
+
+
+    form.form-style-9(action = '/valideProduct', method = 'post', enctype="multipart/form-data")
+            div
+              label(for='brand') Brand :
+              input#brand(type='text' name = "brand" value="" required autofocus)
+            div
+              label(for='name') Name :
+              input#name(type='text' name = "name" value="" required)
+            div
+              label(for='gender') Gender :
+              input(type='checkbox' name = "gender" value="male" )
+              | Male
+              input(type='checkbox' name = "gender" value="woman" )
+              | Woman
+            div
+              label(for='desc') Description :
+              input#desc(type='text' name = "desc" value="" required)
+            div
+              label(for='size') Size :
+              input#size(type="number" step="any" name = "size" value="" required)
+            div
+              label(for='Color') Color :
+              input#color(type='text' name = "color" value="" required)
+            div
+              label(for='Price') Price :
+              input#price(type="number" step="any" name = "price" value="" required)
+            div
+              label(for='Location') Location :
+              input#location(type='text' name = "location" value="" required)
+              br
+              label(for='Latitude') Latitude :
+              input#latitude(type="number" step="any" name = "latitude" value="" required)
+              label(for='Longitude') Longitude :
+              input#longitude(type="number" step="any" name = "longitude" value="" required)
+              a(href="https://www.latlong.net/") click here to know this
+            div
+              label(for='Image') Image :
+              input#image(type='file' name='image' value="" required)
+            div
+              input(type='submit', value='Valider').btn.btn-primary
