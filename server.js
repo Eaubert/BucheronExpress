@@ -13,6 +13,19 @@ var Product = require('./models/Product');
 // Load environment variables from .env file
 dotenv.load();
 
+//multer for upload img
+var multer = require('multer');
+var uuid = require('uuid');
+var storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, 'public/img')
+    },
+    filename: function (req, file, cb) {
+        cb(null, uuid.v4() + file.originalname )
+    }
+});
+var upload = multer({ storage: storage });
+
 // Controllers
 var HomeController = require('./controllers/home');
 var userController = require('./controllers/user');
@@ -54,6 +67,11 @@ app.get('/categorize', ProductController.categorize);
 app.post('/find', ProductController.search);
 
 
+//add product method
+app.get('/addProduct', ProductController.addProduct);
+app.post('/valideProduct', upload.single('image'), ProductController.valideProduct);
+
+
 app.get('/', HomeController.index);
 app.post('/s',HomeController.supp);
 app.post('/art', HomeController.art);
@@ -73,9 +91,9 @@ app.get('/reset/:token', userController.resetGet);
 app.post('/reset/:token', userController.resetPost);
 app.get('/logout', userController.logout);
 app.get('/unlink/:provider', userController.ensureAuthenticated, userController.unlink);
+app.get('/log', paimentController.test);
 app.get('/paiement', paimentController.paiement);
-app.post('/finalisation',paimentController.fin);
-app.get('/success',paimentController.success);
+app.post('/finalisation',paimentController.success);
 
 // Production error handler
 if (app.get('env') === 'production') {

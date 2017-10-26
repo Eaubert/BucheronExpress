@@ -1,5 +1,5 @@
 nav.navbar.navbar-default.navbar-static-top
-  .container
+  .w.container
     .navbar-header
       button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar')
         span.sr-only Toggle navigation
@@ -13,6 +13,10 @@ nav.navbar.navbar-default.navbar-static-top
           a(href='/') Home
         li(class=(title == 'Contact') ? 'active' : null)
           a(href='/contact') Contact
+        if user
+          li
+            if user.name == "Admin"
+              a(href='/addProduct')<button class='btn btn-primary'>admin</button>
         li
           a.lien(href='/panier')
             img.shop(src='img/shop.png')

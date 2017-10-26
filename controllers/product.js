@@ -67,3 +67,45 @@ exports.search =  function(req, res) {
    });
  });
 };
+
+
+exports.delete =  function(req, res) {
+
+      console.log(req.param('id'));
+      //Product.forge().where({id : req.param('id')).destroy();
+
+    Product.fetchAll().then(function(tab) {
+      res.render('home', {
+        title: 'Home',
+        tabuser : tab.models
+      });
+    });
+};
+
+exports.addProduct = function(req, res) {
+
+  res.render('addProduct', {
+    	title: 'AddProduct'
+		});
+};
+
+exports.valideProduct = function(req,res){
+
+  console.log(req.file);
+  new Product({
+    name: req.param('name'),
+    brand: req.param('brand'),
+    desc: req.param('desc'),
+    size: req.param('size'),
+    color: req.param('color'),
+    price: req.param('price'),
+    gender: req.param('gender'),
+    location: req.param('location'),
+    latitude: req.param('latitude'),
+    longitude: req.param('longitude'),
+    img: req.file.filename}).save();
+
+  res.render('addProduct', {
+      title: 'AddProduct'
+    });
+}

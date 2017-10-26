@@ -22,7 +22,7 @@ block content
             li='name : ' +result.attributes.name
             li='brand : '+result.attributes.brand
             li='size : '+result.attributes.size
-            li='price : '+result.attributes.price
+            li='price : '+result.attributes.price+'€'
             li='gender : '+result.attributes.gender
             li='description : '+result.attributes.desc
             li='quantity : ' + result.attributes.quantity
@@ -31,4 +31,7 @@ block content
               input.btn.btn-primary(type='submit', value='Supprimer')
     .row
       p.total montant total: #{total}
-      a(href='#{btn}')<button class='btn btn-primary'>Payer</button>
+      if total > 0
+        a(href='/log')<button class='btn btn-primary'>Payer</button>
+      else
+        p buy a pair of shoes
