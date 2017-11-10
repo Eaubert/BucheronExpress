@@ -26,9 +26,12 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-##information
-
+## information
 Les commits amagri sont les commits de alexlef.
+
+Compte administrateur pour pouvoir ajouter un nouveau produit
+- **Email : SuperAdmin@gmail.com**
+- **Mot de passe : adminAEH**
 
 ## Prérequis
 
@@ -38,4 +41,4 @@ Les commits amagri sont les commits de alexlef.
 ## Installation du projet
 
 1. cloner le projet
-2. Se déplacer dans le dossier du projet créé et lancer le fichier demarrage.sh 
+2. Se déplacer dans le dossier du projet créé et lancer le fichier demarrage.sh
